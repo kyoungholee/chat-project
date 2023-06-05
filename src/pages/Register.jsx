@@ -21,12 +21,11 @@ const Register = () => {
     const file = e.target[3].files[0];
 
     try {
-      //Create user 파이어베이스에서 제공해주는 함수 사용
+      //신규회원을 만들기 위한 함수
       const res = await createUserWithEmailAndPassword(auth, email, password);
       const date = new Date().getTime();
       const storageRef = ref(storage, `${displayName + date}`);
 
-      //파이어베이스에서 제공해주는 함수
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
           try {
@@ -43,7 +42,7 @@ const Register = () => {
               photoURL: downloadURL,
             });
 
-            //create empty user chats on firestore
+            //메세지 내역들을 userChats이라는 db에 저장하기 위해 빈공간을 만듬
             await setDoc(doc(db, "userChats", res.user.uid), {});
             navigate("/");
           } catch (err) {
@@ -74,7 +73,7 @@ const Register = () => {
           />
           <label htmlFor="file">
             <img src={Add} alt="이미지 업로드" />
-            <span>Add an avatar</span>
+            <span>프로필 추가하기</span>
           </label>
           <input required style={{ display: "none" }} type="file" id="file" />
 
@@ -83,7 +82,7 @@ const Register = () => {
           {err && <span>잘못 된 정보입니다.</span>}
         </form>
         <p>
-          You do have an account? <Link to="/login">Login</Link>
+          이미 가입을 하셨나요? <Link to="/login">Login</Link>
         </p>
       </div>
     </div>
