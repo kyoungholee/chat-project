@@ -11,11 +11,12 @@ function App() {
   const { currentUser } = useContext(AuthContext);
 
   //현재 로그인한 값이 없으면 무조건 로그인 페이지로 들어온다.
+  //여기서 받은 children props는 AuthContext에서 전달받은 실제 현재 user의 값이다.
   const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
       return <Navigate to="/login" />;
     }
-
+    console.log(children);
     return children;
   };
 
