@@ -71,6 +71,12 @@ export default function Input() {
     setImg(null);
   };
 
+  const handleOnKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSend();
+    }
+  };
+
   return (
     <div className="input">
       <input
@@ -78,6 +84,7 @@ export default function Input() {
         placeholder="입력중입니다."
         onChange={(e) => setText(e.target.value)}
         value={text}
+        onKeyPress={handleOnKeyPress}
       />
       <div className="send">
         <img src={Attach} alt="클립보드" />
