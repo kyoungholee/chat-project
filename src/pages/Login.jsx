@@ -25,8 +25,8 @@ const Login = () => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">채팅 프로그램</span>
-        <span className="title">Login</span>
+        <span className="logo">나랑 대화해 볼래?🤗</span>
+        <span className="title">로그인</span>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email"></label>
           <input type="email" id="email" placeholder="이메일을 입력해주세요." />

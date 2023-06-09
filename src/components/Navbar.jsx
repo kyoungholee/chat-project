@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <span className="logo">채팅 프로그램</span>
+      <span className="logo">나랑 대화해 볼래?🤗</span>
       <div className="user">
         <img src={currentUser.photoURL} alt="" />
         <span>{currentUser.displayName}</span>
