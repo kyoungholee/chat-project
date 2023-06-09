@@ -75,10 +75,10 @@ const Register = () => {
             <img src={Add} alt="이미지 업로드" />
             <span>프로필 추가하기</span>
           </label>
-          <input required style={{ display: "none" }} type="file" id="file" />
+          <input required type="file" id="file" />
 
           <button disabled={loading}>Sign up</button>
-          {loading && "이미지 업로드 중입니다. 잠시만 기다려 주세요...."}
+          {loading && <span>잠시만 기달려 주세요.</span>}
           {err && <span>잘못 된 정보입니다.</span>}
         </form>
         <p>
