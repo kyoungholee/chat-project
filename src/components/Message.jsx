@@ -12,19 +12,12 @@ export default function Message({ message }) {
   const seconds = ("0" + curDate.getSeconds()).slice(-2);
 
   const dateString = hours + ":" + minutes + ":" + seconds;
-
-  console.log(dateString);
-
-  console.log(curDate);
-
   const ref = useRef();
 
   // props로 받은 message를 useRef를 이용해 다시 렌더링 되지 않고 자연스럽게 스크롤를 움직일 수 있음.
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
-
-  console.log(message);
 
   return (
     <div
