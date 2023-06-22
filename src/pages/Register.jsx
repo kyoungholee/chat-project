@@ -64,12 +64,30 @@ const Register = () => {
         <span className="logo">채팅 프로그램</span>
         <span className="title">회원가입</span>
         <form onSubmit={handleSubmit}>
-          <input required type="text" placeholder="이름을 입력해주세요." />
-          <input required type="email" placeholder="이메일을 입력해주세요." />
+          <label htmlFor="name"></label>
+          <input
+            required
+            type="text"
+            id="name"
+            placeholder="이름을 입력해주세요."
+            name="name"
+          />
+
+          <label htmlFor="email"></label>
+          <input
+            required
+            type="email"
+            id="email"
+            placeholder="이메일을 입력해주세요."
+            name="email"
+          />
+          <label htmlFor="password"></label>
           <input
             required
             type="password"
+            id="password"
             placeholder="비밀번호를 입력해주세요."
+            name="password"
           />
           <label htmlFor="file">
             <img src={Add} alt="이미지 업로드" />

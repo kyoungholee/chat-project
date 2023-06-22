@@ -84,6 +84,7 @@ export default function Input() {
         placeholder="입력중입니다."
         onChange={(e) => setText(e.target.value)}
         value={text}
+        id="text"
         onKeyPress={handleOnKeyPress}
       />
       <div className="send">

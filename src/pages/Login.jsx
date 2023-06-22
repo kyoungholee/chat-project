@@ -29,12 +29,18 @@ const Login = () => {
         <span className="title">로그인</span>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email"></label>
-          <input type="email" id="email" placeholder="이메일을 입력해주세요." />
+          <input
+            type="email"
+            id="email"
+            placeholder="이메일을 입력해주세요."
+            name="email"
+          />
           <label htmlFor="password"></label>
           <input
             type="password"
             id="password"
             placeholder="비밀번호를 입력해주세요."
+            name="password"
           />
           <button>Sign in</button>
           {err && <span>잘못된 정보입니다.</span>}
