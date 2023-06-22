@@ -5,14 +5,13 @@ import { auth } from "../firebase";
 
 const Login = () => {
   const [err, setErr] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassowrd] = useState("");
   const navigate = useNavigate();
 
   //Sign in 클릭시 사용되는 함수
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const email = e.target[0].value;
-    const password = e.target[1].value;
 
     try {
       //파이어베이스에서 제공되는 함수로 이메일과 PW가 맞으면 로그인을 시켜줌
@@ -34,6 +33,7 @@ const Login = () => {
             id="email"
             placeholder="이메일을 입력해주세요."
             name="email"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor="password"></label>
           <input
@@ -41,6 +41,7 @@ const Login = () => {
             id="password"
             placeholder="비밀번호를 입력해주세요."
             name="password"
+            onChange={(e) => setPassowrd(e.target.value)}
           />
           <button>Sign in</button>
           {err && <span>잘못된 정보입니다.</span>}
