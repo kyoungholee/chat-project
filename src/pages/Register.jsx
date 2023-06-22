@@ -9,15 +9,17 @@ import { useNavigate, Link } from "react-router-dom";
 const Register = () => {
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
 
   //회원가입 버튼 클릭 시 함수 실행
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const displayName = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
+
     const file = e.target[3].files[0];
 
     try {
@@ -71,6 +73,7 @@ const Register = () => {
             id="name"
             placeholder="이름을 입력해주세요."
             name="name"
+            onChange={(e) => setDisplayName(e.target.value)}
           />
 
           <label htmlFor="email"></label>
@@ -80,6 +83,7 @@ const Register = () => {
             id="email"
             placeholder="이메일을 입력해주세요."
             name="email"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor="password"></label>
           <input
@@ -88,6 +92,7 @@ const Register = () => {
             id="password"
             placeholder="비밀번호를 입력해주세요."
             name="password"
+            onChange={(e) => setPassword(e.target.value)}
           />
           <label htmlFor="file">
             <img src={Add} alt="이미지 업로드" />

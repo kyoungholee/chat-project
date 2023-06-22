@@ -31,7 +31,7 @@ export default function Message({ message }) {
               ? currentUser.photoURL
               : data.user.photoURL
           }
-          alt=""
+          alt="프로필 사진"
         />
         <span className="current_time">{dateString}</span>
       </div>

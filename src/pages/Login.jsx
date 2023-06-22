@@ -6,7 +6,8 @@ import { auth } from "../firebase";
 const Login = () => {
   const [err, setErr] = useState(false);
   const [email, setEmail] = useState("");
-  const [password, setPassowrd] = useState("");
+  const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
 
   //Sign in 클릭시 사용되는 함수
@@ -41,7 +42,7 @@ const Login = () => {
             id="password"
             placeholder="비밀번호를 입력해주세요."
             name="password"
-            onChange={(e) => setPassowrd(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button>Sign in</button>
           {err && <span>잘못된 정보입니다.</span>}
