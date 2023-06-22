@@ -36,13 +36,8 @@ const Login = () => {
             id="password"
             placeholder="비밀번호를 입력해주세요."
           />
-          <button
-            onClick={() => {
-              err && alert("잘못된 정보입니다.");
-            }}
-          >
-            Sign in
-          </button>
+          <button>Sign in</button>
+          {err && <span>잘못된 정보입니다.</span>}
         </form>
         <p>
           회원가입을 하시겠습니까?<Link to="/register">Register</Link>
